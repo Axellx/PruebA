@@ -5,17 +5,41 @@
  */
 package hola;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Usser
  */
 public class gg {
 
-    /**
-     * @param args the command line arguments
-     */
+   static Scanner entrada = new Scanner(System.in);
+    static int pregunta1(int[] vec, int n, int mayornum)
+    {
+        if(n==0 && vec[n]>mayornum)
+            return vec[n];
+        else if (n==0 )
+            return mayornum;
+        
+        else{
+            if(vec [n] > mayornum)
+                mayornum = vec[n];
+            return pregunta1(vec, n-1, mayornum);       
+        }
+       }
+  
     public static void main(String[] args) {
-        // TODO code application logic here
+        int n;
+        System.out.println("Ingresa el valor de n");
+        n=entrada.nextInt();
+        int [] vec = new int[n];
+        for(int i=0; i <n; i++){
+            vec[i]= (int)(Math.random()*1001);
+            System.out.println(vec[i]+"\t");
+            
+        }
+        
+        System.out.println("El mayor numero es: "+pregunta1(vec,n-1,vec[0]));
     }
     
 }
