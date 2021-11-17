@@ -41,5 +41,5 @@ public class gg {
         
         System.out.println("El mayor numero es: "+pregunta1(vec,n-1,vec[0]));
     }
-    
+    //jkldsbnfgsdbgkjsdbgklsdnktgl
 }
